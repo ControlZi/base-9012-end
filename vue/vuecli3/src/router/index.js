@@ -18,6 +18,23 @@ export default new Router({
       component: () => import('@/views/login')
     },
     {
+      path: '/test',
+      name: 'Test',
+      component: () => import('@/views/test'),
+      children: [
+        {
+          path: 'if-for-template',
+          name: 'IfForTemplate',
+          component: () => import('@/views/test/if-for-template')
+        },
+        {
+          path: 'directive',
+          name: 'directive',
+          component: () => import('@/views/test/directive')
+        }
+      ]
+    },
+    {
       path: '*',
       redirect: '/'
     }
