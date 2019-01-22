@@ -28,24 +28,31 @@
     var s = document.getElementById('throttle');
     var index = 1;
     window.onload = function() {
-      s.addEventListener('mousemove', throttle1(apple));
+      s.addEventListener('mousemove', throttle(apple));
     };
     function apple() {
       console.log('throttle:', index);
       s.getElementsByTagName('span')[0].innerHTML = index++;
     }
     function throttle(func, wait = 1000) {
-      var lastruntime, latetime, timeout;
+      var lastruntime, timeout, flag;
       lastruntime = 0;
+      // 标示是否进过定时器
+      flag = false;
       return function() {
-        let timestamp = Date.now();
-        if (timestamp - lastruntime > wait) {
+        // 离上次运行时间
+        let timestamp = Date.now() - lastruntime;
+        if (timestamp > wait) {
           clearTimeout(timeout);
           timeout = null;
           lastruntime = Date.now();
+          flag = false;
           func();
         } else {
-          timeout = setTimeout(func, wait);
+          if (!flag) {
+            flag = true;
+            timeout = setTimeout(func, wait - timestamp);
+          }
         }
       };
     }

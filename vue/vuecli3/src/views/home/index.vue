@@ -4,6 +4,9 @@
     <router-link to="/login">
       login
     </router-link>
+    <router-link to="/test">
+      test
+    </router-link>
   </div>
 </template>
 

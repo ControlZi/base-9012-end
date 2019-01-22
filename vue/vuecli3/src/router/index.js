@@ -23,14 +23,34 @@ export default new Router({
       component: () => import('@/views/test'),
       children: [
         {
+          // 杂
+          path: 'blend',
+          name: 'Blend',
+          component: () => import('@/views/test/blend')
+        },
+        {
+          // 为了不把if和for写在同一下标签上，把if写在template
           path: 'if-for-template',
           name: 'IfForTemplate',
           component: () => import('@/views/test/if-for-template')
         },
         {
+          // 自定义指令
           path: 'directive',
-          name: 'directive',
+          name: 'Directive',
           component: () => import('@/views/test/directive')
+        },
+        {
+          // 依赖注入
+          path: 'provide',
+          name: 'Provide',
+          component: () => import('@/views/test/provide')
+        },
+        {
+          // 递归组件
+          path: 'recursion',
+          name: 'Recursion',
+          component: () => import('@/views/test/recursion')
         }
       ]
     },
