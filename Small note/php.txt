@@ -1,4 +1,4 @@
-Ìø×ª£º
+è·³è½¬ï¼š
 header("location:$url");
 header("Refresh: 5 ; $url=a.html");
 echo "<script>alert('sb sb sb'); history.go(-1);</script>";

@@ -1,280 +1,280 @@
-:g/^\s*$/d  ɾ������
-:g#//.*$##g ɾ��ע��
+:g/^\s*$/d  删除空行
+:g#//.*$##g 删除注释
 
 
-vim��ģʽ
+vim的模式
 
-����ģʽ����Esc��Ctrl+[���룩 ���½���ʾ�ļ�����Ϊ��
-����ģʽ����i�����룩 ���½���ʾ--INSERT--
-����ģʽ����֪����ν��룩 ���½���ʾ--VISUAL--
+正常模式（按Esc或Ctrl+[进入） 左下角显示文件名或为空
+插入模式（按i键进入） 左下角显示--INSERT--
+可视模式（不知道如何进入） 左下角显示--VISUAL--
 
-��������
+导航命令
 
-% ����ƥ��
+% 括号匹配
 
-��������
+插入命令
 
-i �ڵ�ǰλ����ǰ����
+i 在当前位置生前插入
 
-I �ڵ�ǰ���ײ���
+I 在当前行首插入
 
-a �ڵ�ǰλ�ú����
+a 在当前位置后插入
 
-A �ڵ�ǰ��β����
+A 在当前行尾插入
 
-o �ڵ�ǰ��֮�����һ��
+o 在当前行之后插入一行
 
-O �ڵ�ǰ��֮ǰ����һ��
+O 在当前行之前插入一行
 
-��������
+查找命令
 
-/text��������text����n��������һ������N������ǰһ����
+/text　　查找text，按n健查找下一个，按N健查找前一个。
 
-?text��������text��������ң���n��������һ������N������ǰһ����
+?text　　查找text，反向查找，按n健查找下一个，按N健查找前一个。
 
-vim����һЩ�����ַ��ڲ���ʱ��Ҫת�塡��.*[]^%/?~$
+vim中有一些特殊字符在查找时需要转义　　.*[]^%/?~$
 
-:set ignorecase�������Դ�Сд�Ĳ���
+:set ignorecase　　忽略大小写的查找
 
-:set noignorecase���������Դ�Сд�Ĳ���
+:set noignorecase　　不忽略大小写的查找
 
-���Һܳ��Ĵʣ����һ���ʺܳ��������鷳�����Խ�����ƶ����ô��ϣ���*��#�������Ըõ��ʽ����������൱��/��������#�����൱��?������
+查找很长的词，如果一个词很长，键入麻烦，可以将光标移动到该词上，按*或#键即可以该单词进行搜索，相当于/搜索。而#命令相当于?搜索。
 
-:set hlsearch��������������������н����������ʾ��������ֻ��ʾһ��ƥ�䡣
+:set hlsearch　　高亮搜索结果，所有结果都高亮显示，而不是只显示一个匹配。
 
-:set nohlsearch�����رո���������ʾ
+:set nohlsearch　　关闭高亮搜索显示
 
-:nohlsearch�����رյ�ǰ�ĸ�����ʾ������ٴ��������߰���n��N��������ٴθ�����
+:nohlsearch　　关闭当前的高亮显示，如果再次搜索或者按下n或N键，则会再次高亮。
 
-:set incsearch����������ģʽ���Ե�ǰ������ַ��������������صȴ�������ɡ�
+:set incsearch　　逐步搜索模式，对当前键入的字符进行搜索而不必等待键入完成。
 
-:set wrapscan�����������������������ļ�ͷ��βʱ�����ؼ���������Ĭ�Ͽ�����
+:set wrapscan　　重新搜索，在搜索到文件头或尾时，返回继续搜索，默认开启。
 
-�滻����
+替换命令
 
-ra ����ǰ�ַ��滻Ϊa�������ַ�����������ַ���
+ra 将当前字符替换为a，当期字符即光标所在字符。
 
-s/old/new/ ��old�滻new���滻��ǰ�еĵ�һ��ƥ��
+s/old/new/ 用old替换new，替换当前行的第一个匹配
 
-s/old/new/g ��old�滻new���滻��ǰ�е�����ƥ��
+s/old/new/g 用old替换new，替换当前行的所有匹配
 
-%s/old/new/ ��old�滻new���滻�����еĵ�һ��ƥ��
+%s/old/new/ 用old替换new，替换所有行的第一个匹配
 
-%s/old/new/g ��old�滻new���滻�����ļ�������ƥ��
+%s/old/new/g 用old替换new，替换整个文件的所有匹配
 
-:10,20 s/^/    /g �ڵ�10��֪��20��ÿ��ǰ����ĸ��ո�����������
+:10,20 s/^/    /g 在第10行知第20行每行前面加四个空格，用于缩进。
 
-ddp ������������к����½��ڵ�һ�С�
+ddp 交换光标所在行和其下紧邻的一行。
 
-�ƶ�����
+移动命令
 
-h ����һ���ַ�
-l ����һ���ַ��������������ã�һ����w���档
-k ����һ���ַ�
-j ����һ���ַ�
-�����ĸ���������������ʹ�ã�����20j���������ƶ�20�У�5h���������ƶ�5���ַ�����Vim�У��ܶ���������������ʹ�ã�����ɾ��10���ַ�10x���ڵ�ǰλ�ú����3������3a��<Esc>�������Esc�Ǳ���ģ����������Ч��
+h 左移一个字符
+l 右移一个字符，这个命令很少用，一般用w代替。
+k 上移一个字符
+j 下移一个字符
+以上四个命令可以配合数字使用，比如20j就是向下移动20行，5h就是向左移动5个字符，在Vim中，很多命令都可以配合数字使用，比如删除10个字符10x，在当前位置后插入3个！，3a！<Esc>，这里的Esc是必须的，否则命令不生效。
 
-w ��ǰ�ƶ�һ�����ʣ����ͣ�ڵ����ײ���������ѵ���β����ת����һ�����ס�������죬���Դ���l���
+w 向前移动一个单词（光标停在单词首部），如果已到行尾，则转至下一行行首。此命令快，可以代替l命令。
 
-b ����ƶ�һ������ 2b ����ƶ�2������
+b 向后移动一个单词 2b 向后移动2个单词
 
-e��ͬw��ֻ�����ǹ��ͣ�ڵ���β��
+e，同w，只不过是光标停在单词尾部
 
-ge��ͬb�����ͣ�ڵ���β����
+ge，同b，光标停在单词尾部。
 
-^ �ƶ������е�һ���ǿհ��ַ��ϡ�
+^ 移动到本行第一个非空白字符上。
 
-0������0���ƶ������е�һ���ַ��ϣ�
+0（数字0）移动到本行第一个字符上，
 
-<HOME> �ƶ������е�һ���ַ���ͬ0����
+<HOME> 移动到本行第一个字符。同0健。
 
-$ �ƶ�����β 3$ �ƶ�������3�е���β
+$ 移动到行尾 3$ 移动到下面3行的行尾
 
-gg �ƶ����ļ�ͷ�� = [[
+gg 移动到文件头。 = [[
 
-G��shift + g�� �ƶ����ļ�β�� = ]]
+G（shift + g） 移动到文件尾。 = ]]
 
-f��find������Ҳ���������ƶ���fx���ҵ������һ��Ϊx���ַ���3fd���ҵ�������Ϊd���ַ���
+f（find）命令也可以用于移动，fx将找到光标后第一个为x的字符，3fd将找到第三个为d的字符。
 
-F ͬf��������ҡ�
+F 同f，反向查找。
 
-����ָ���У�ð��+�кţ��س�����������240�о��� :240�س�����һ���������к�+G������230G����230�С�
+跳到指定行，冒号+行号，回车，比如跳到240行就是 :240回车。另一个方法是行号+G，比如230G跳到230行。
 
-Ctrl + e ���¹���һ��
+Ctrl + e 向下滚动一行
 
-Ctrl + y ���Ϲ���һ��
+Ctrl + y 向上滚动一行
 
-Ctrl + d ���¹�������
+Ctrl + d 向下滚动半屏
 
-Ctrl + u ���Ϲ�������
+Ctrl + u 向上滚动半屏
 
-Ctrl + f ���¹���һ��
+Ctrl + f 向下滚动一屏
 
-Ctrl + b ���Ϲ���һ��
+Ctrl + b 向上滚动一屏
 
-����������
+撤销和重做
 
-u ������Undo��
-U ���������еĲ���
-Ctrl + r ������Redo�����������ĳ�����
+u 撤销（Undo）
+U 撤销对整行的操作
+Ctrl + r 重做（Redo），即撤销的撤销。
 
-ɾ������
+删除命令
 
-x ɾ����ǰ�ַ�
+x 删除当前字符
 
-3x ɾ����ǰ��꿪ʼ��������ַ�
+3x 删除当前光标开始向后三个字符
 
-X ɾ����ǰ�ַ���ǰһ���ַ���X=dh
+X 删除当前字符的前一个字符。X=dh
 
-dl ɾ����ǰ�ַ��� dl=x
+dl 删除当前字符， dl=x
 
-dh ɾ��ǰһ���ַ�
+dh 删除前一个字符
 
-dd ɾ����ǰ��
+dd 删除当前行
 
-dj ɾ����һ��
+dj 删除上一行
 
-dk ɾ����һ��
+dk 删除下一行
 
-10d ɾ����ǰ�п�ʼ��10�С�
+10d 删除当前行开始的10行。
 
-D ɾ����ǰ�ַ�����β��D=d$
+D 删除当前字符至行尾。D=d$
 
-d$ ɾ����ǰ�ַ�֮��������ַ������У�
+d$ 删除当前字符之后的所有字符（本行）
 
-kdgg ɾ����ǰ��֮ǰ�����У���������ǰ�У�
+kdgg 删除当前行之前所有行（不包括当前行）
 
-jdG��jd shift + g��   ɾ����ǰ��֮�������У���������ǰ�У�
+jdG（jd shift + g）   删除当前行之后所有行（不包括当前行）
 
-:1,10d ɾ��1-10��
+:1,10d 删除1-10行
 
-:11,$d ɾ��11�м��Ժ����е���
+:11,$d 删除11行及以后所有的行
 
-:1,$d ɾ��������
+:1,$d 删除所有行
 
-J(shift + j)����ɾ������֮��Ŀ��У�ʵ�����Ǻϲ����С�
+J(shift + j)　　删除两行之间的空行，实际上是合并两行。
 
-������ճ��
+拷贝和粘贴
 
-yy ������ǰ��
+yy 拷贝当前行
 
-nyy ������ǰ��ʼ��n�У�����2yy������ǰ�м�����һ�С�
+nyy 拷贝当前后开始的n行，比如2yy拷贝当前行及其下一行。
 
-p  �ڵ�ǰ����ճ��,���֮ǰʹ����yy����������һ�У���ô���ڵ�ǰ�е���һ��ճ����
+p  在当前光标后粘贴,如果之前使用了yy命令来复制一行，那么就在当前行的下一行粘贴。
 
-shift+p �ڵ�ǰ��ǰճ��
+shift+p 在当前行前粘贴
 
-:1,10 co 20 ��1-10�в��뵽��20��֮��
+:1,10 co 20 将1-10行插入到第20行之后。
 
-:1,$ co $ �������ļ�����һ�ݲ����ӵ��ļ�β����
+:1,$ co $ 将整个文件复制一份并添加到文件尾部。
 
-����ģʽ�°�v�����֣���V�����У��������ģʽ��Ȼ����jklh�����ƶ�����ѡ��ĳЩ�л��ַ����ٰ�y���ɸ���
+正常模式下按v（逐字）或V（逐行）进入可视模式，然后用jklh命令移动即可选择某些行或字符，再按y即可复制
 
-ddp������ǰ�к�����һ��
+ddp交换当前行和其下一行
 
-xp������ǰ�ַ������һ���ַ�
+xp交换当前字符和其后一个字符
 
-��������
+剪切命令
 
-����ģʽ�°�v�����֣���V�����У��������ģʽ��Ȼ����jklh�����ƶ�����ѡ��ĳЩ�л��ַ����ٰ�d���ɼ���
+正常模式下按v（逐字）或V（逐行）进入可视模式，然后用jklh命令移动即可选择某些行或字符，再按d即可剪切
 
-ndd ���е�ǰ��֮���n�С�����p������ԶԼ��е����ݽ���ճ��
+ndd 剪切当前行之后的n行。利用p命令可以对剪切的内容进行粘贴
 
-:1,10d ��1-10�м��С�����p����ɽ����к�����ݽ���ճ����
+:1,10d 将1-10行剪切。利用p命令可将剪切后的内容进行粘贴。
 
-:1, 10 m 20 ����1-10���ƶ�����20��֮��
+:1, 10 m 20 将第1-10行移动到第20行之后。
 
-�˳�����
+退出命令
 
-:wq ���沢�˳�
+:wq 保存并退出
 
-ZZ ���沢�˳�
+ZZ 保存并退出
 
-:q! ǿ���˳����������и���
+:q! 强制退出并忽略所有更改
 
-:e! ���������޸ģ�����ԭ���ļ���
+:e! 放弃所有修改，并打开原来文件。
 
-��������
+窗口命令
 
-:split��new ��һ���´��ڣ����ͣ�ڶ���Ĵ�����
+:split或new 打开一个新窗口，光标停在顶层的窗口上
 
-:split file��:new file ���´��ڴ��ļ�
+:split file或:new file 用新窗口打开文件
 
-split�򿪵Ĵ��ڶ��Ǻ���ģ�ʹ��vsplit��������򿪴��ڡ�
+split打开的窗口都是横向的，使用vsplit可以纵向打开窗口。
 
-Ctrl+ww �ƶ�����һ������
+Ctrl+ww 移动到下一个窗口
 
-Ctrl+wj �ƶ����·��Ĵ���
+Ctrl+wj 移动到下方的窗口
 
-Ctrl+wk �ƶ����Ϸ��Ĵ���
+Ctrl+wk 移动到上方的窗口
 
-�رմ���
+关闭窗口
 
-:close ���һ�����ڲ���ʹ�ô�������Է�ֹ�����˳�vim��
+:close 最后一个窗口不能使用此命令，可以防止意外退出vim。
 
-:q ��������һ�����رյĴ��ڣ���ô���˳�vim��
+:q 如果是最后一个被关闭的窗口，那么将退出vim。
 
-ZZ ���沢�˳���
+ZZ 保存并退出。
 
-�ر����д��ڣ�ֻ������ǰ����
+关闭所有窗口，只保留当前窗口
 
 :only
 
-¼�ƺ�
+录制宏
 
-��q����������ĸ��ʼ¼�ƣ��ٰ�q������¼�ƣ�����ζ��vim�еĺ겻��Ƕ�ף���ʹ�õ�ʱ��@�Ӻ���������qa������q¼����Ϊa�ĺ꣬@aʹ������ꡣ
+按q键加任意字母开始录制，再按q键结束录制（这意味着vim中的宏不可嵌套），使用的时候@加宏名，比如qa。。。q录制名为a的宏，@a使用这个宏。
 
-ִ��shell����
+执行shell命令
 
 :!command
 
-:!ls �г���ǰĿ¼���ļ�
+:!ls 列出当前目录下文件
 
-:!perl -c script.pl ���perl�ű��﷨�����Բ����˳�vim���ǳ����㡣
+:!perl -c script.pl 检查perl脚本语法，可以不用退出vim，非常方便。
 
-:!perl script.pl ִ��perl�ű������Բ����˳�vim���ǳ����㡣
+:!perl script.pl 执行perl脚本，可以不用退出vim，非常方便。
 
-:suspend��Ctrl - Z ����vim���ص�shell����fg���Է���vim��
+:suspend或Ctrl - Z 挂起vim，回到shell，按fg可以返回vim。
 
-ע������
+注释命令
 
-perl������#��ʼ����Ϊע�ͣ�����Ҫע��ĳЩ�У�ֻ�������׼���#
+perl程序中#开始的行为注释，所以要注释某些行，只需在行首加入#
 
-3,5 s/^/#/g ע�͵�3-5��
+3,5 s/^/#/g 注释第3-5行
 
-3,5 s/^#//g ���3-5�е�ע��
+3,5 s/^#//g 解除3-5行的注释
 
-1,$ s/^/#/g ע�������ĵ���
+1,$ s/^/#/g 注释整个文档。
 
-:%s/^/#/g ע�������ĵ����˷����졣
+:%s/^/#/g 注释整个文档，此法更快。
 
-��������
+帮助命令
 
-:help or F1 ��ʾ��������
-:help xxx ��ʾxxx�İ��������� :help i, :help CTRL-[����Ctrl+[�İ�������
-:help 'number' Vimѡ��İ����õ���������
-:help <Esc> ������İ�����<>����
-:help -t Vim���������İ�����-
-��help i_<Esc> ����ģʽ��Esc�İ�����ĳ��ģʽ�µİ�����ģʽ_�����ģʽ
-�����ļ���λ��||֮��������ǳ����ӣ�������Ctrl+]�������ӣ�Ctrl+o��Ctrl + t������
+:help or F1 显示整个帮助
+:help xxx 显示xxx的帮助，比如 :help i, :help CTRL-[（即Ctrl+[的帮助）。
+:help 'number' Vim选项的帮助用单引号括起
+:help <Esc> 特殊键的帮助用<>扩起
+:help -t Vim启动参数的帮助用-
+：help i_<Esc> 插入模式下Esc的帮助，某个模式下的帮助用模式_主题的模式
+帮助文件中位于||之间的内容是超链接，可以用Ctrl+]进入链接，Ctrl+o（Ctrl + t）返回
 
-�����Ǳ༭����
+其他非编辑命令
 
-. �ظ�ǰһ������
+. 重复前一次命令
 
-:set ruler?�����鿴�Ƿ�������ruler����.vimrc�У�ʹ��set�������Ƶ�ѡ�����ͨ���������鿴
+:set ruler?　　查看是否设置了ruler，在.vimrc中，使用set命令设制的选项都可以通过这个命令查看
 
-:scriptnames�����鿴vim�ű��ļ���λ�ã�����.vimrc�ļ����﷨�ļ���plugin�ȡ�
+:scriptnames　　查看vim脚本文件的位置，比如.vimrc文件，语法文件及plugin等。
 
-:set list ��ʾ�Ǵ�ӡ�ַ�����tab���ո���β�ȡ����tab�޷���ʾ����ȷ����set lcs=tab:>-����������.vimrc�ļ�����ȷ������ļ��е�ȷ��tab�����������expendtab����ôtab������չΪ�ո�
+:set list 显示非打印字符，如tab，空格，行尾等。如果tab无法显示，请确定用set lcs=tab:>-命令设置了.vimrc文件，并确保你的文件中的确有tab，如果开启了expendtab，那么tab将被扩展为空格。
 
-Vim�̳�
-��Unixϵͳ��
+Vim教程
+在Unix系统上
 $ vimtutor
-��Windowsϵͳ��
+在Windows系统上
 :help tutor
 
-:syntax �г��Ѿ�������﷨��
-:syntax clear ����Ѷ�����﷨����
-:syntax case match ��Сд���У�int��Int����Ϊ��ͬ���﷨Ԫ��
-:syntax case ignore ��Сд�޹أ�int��Int����Ϊ��ͬ���﷨Ԫ�أ���ʹ��ͬ������ɫ����
+:syntax 列出已经定义的语法项
+:syntax clear 清除已定义的语法规则
+:syntax case match 大小写敏感，int和Int将视为不同的语法元素
+:syntax case ignore 大小写无关，int和Int将视为相同的语法元素，并使用同样的配色方案

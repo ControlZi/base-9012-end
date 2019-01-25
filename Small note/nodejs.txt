@@ -1,13 +1,13 @@
-»·¾³±äÁ¿ÅäÖÃ£º
-1.ÔÚnode°²×°Ä¿Â¼ÏÂ´´½¨Á½¸öÎÄ¼ş¼Ğ£¬node_globalºÍnode_cache
-2.ÔÚcmdÏÂÖ´ĞĞ
+ç¯å¢ƒå˜é‡é…ç½®ï¼š
+1.åœ¨nodeå®‰è£…ç›®å½•ä¸‹åˆ›å»ºä¸¤ä¸ªæ–‡ä»¶å¤¹ï¼Œnode_globalå’Œnode_cache
+2.åœ¨cmdä¸‹æ‰§è¡Œ
 	npm config set prefix "D:\nodejs\node_global"
 	npm config set cache "D:\nodejs\node_cache"
-3.ĞÂ½¨»·¾³±äÁ¿
-ÏµÍ³£ºNODE_PATH:D:\nodejs\node_global\node_modules
+3.æ–°å»ºç¯å¢ƒå˜é‡
+ç³»ç»Ÿï¼šNODE_PATH:D:\nodejs\node_global\node_modules
 user: Path:D:\nodejs\node_global
-4¡£ÌÔ±¦¾µÏñ
+4ã€‚æ·˜å®é•œåƒ
 npm install -g cnpm --registry=https://registry.npm.taobao.org
-5.²âÊÔ
+5.æµ‹è¯•
 npm install express -g
-npm install npm@latest -g //¸üĞÂnpmµ½×îĞÂ°æ±¾
+npm install npm@latest -g //æ›´æ–°npmåˆ°æœ€æ–°ç‰ˆæœ¬

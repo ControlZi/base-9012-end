@@ -1,12 +1,12 @@
-1.°²×°ÌÔ±¦¾µÏñcnpm
+1.å®‰è£…æ·˜å®é•œåƒcnpm
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 
-2.°²×°Vue-cli
-# È«¾Ö°²×° vue-cli
+2.å®‰è£…Vue-cli
+# å…¨å±€å®‰è£… vue-cli
 $ npm install --global vue-cli
-# ´´½¨Ò»¸ö»ùÓÚ webpack Ä£°åµÄĞÂÏîÄ¿
+# åˆ›å»ºä¸€ä¸ªåŸºäº webpack æ¨¡æ¿çš„æ–°é¡¹ç›®
 $ vue init webpack my-project
-# °²×°ÒÀÀµ£¬×ßÄã
+# å®‰è£…ä¾èµ–ï¼Œèµ°ä½ 
 $ cd my-project
 $ npm install
 $ npm run dev

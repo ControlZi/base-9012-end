@@ -1,11 +1,11 @@
-1£©ÔÚÏµÍ³±äÁ¿ÀïĞÂ½¨¡°JAVA_HOME¡±±äÁ¿£¬±äÁ¿ÖµÎª£ºC:\Program Files\Java\jdk1.6.0_14£¨¸ù¾İ×Ô¼ºµÄ°²×°Â·¾¶ÌîĞ´£©
+1ï¼‰åœ¨ç³»ç»Ÿå˜é‡é‡Œæ–°å»ºâ€œJAVA_HOMEâ€å˜é‡ï¼Œå˜é‡å€¼ä¸ºï¼šC:\Program Files\Java\jdk1.6.0_14ï¼ˆæ ¹æ®è‡ªå·±çš„å®‰è£…è·¯å¾„å¡«å†™ï¼‰
 
-2£©ĞÂ½¨¡°classpath¡±±äÁ¿£¬±äÁ¿ÖµÎª£º.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar
+2ï¼‰æ–°å»ºâ€œclasspathâ€å˜é‡ï¼Œå˜é‡å€¼ä¸ºï¼š.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar
 
-3£©ÔÚpath±äÁ¿£¨ÒÑ´æÔÚ²»ÓÃĞÂ½¨£©Ìí¼Ó±äÁ¿Öµ£º%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin£¨×¢Òâ±äÁ¿ÖµÖ®¼äÓÃ¡°;¡±¸ô¿ª£©
+3ï¼‰åœ¨pathå˜é‡ï¼ˆå·²å­˜åœ¨ä¸ç”¨æ–°å»ºï¼‰æ·»åŠ å˜é‡å€¼ï¼š%JAVA_HOME%\bin;%JAVA_HOME%\jre\binï¼ˆæ³¨æ„å˜é‡å€¼ä¹‹é—´ç”¨â€œ;â€éš”å¼€ï¼‰
 
 
 
-1£¬Windows--Preferences--General--Content Types--½«Java Class FileºÍTextµÄDefault encoding ¸ÄÎªUTF-8---UPDATA
-2£¬Windows--Preferences--General--Workspace---½«Text file encoding¸ÄÎªUTF-8
-3£¬ÓÒ¼üµã»÷ÏîÄ¿--Preferences--Resource--½«Text file encoding¸ÄÎªUTF-8
+1ï¼ŒWindows--Preferences--General--Content Types--å°†Java Class Fileå’ŒTextçš„Default encoding æ”¹ä¸ºUTF-8---UPDATA
+2ï¼ŒWindows--Preferences--General--Workspace---å°†Text file encodingæ”¹ä¸ºUTF-8
+3ï¼Œå³é”®ç‚¹å‡»é¡¹ç›®--Preferences--Resource--å°†Text file encodingæ”¹ä¸ºUTF-8

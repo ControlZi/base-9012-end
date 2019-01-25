@@ -1,20 +1,20 @@
-¼ÓÈësudoers
-sudo usermod -a -G admin username(-a ÆäËûÓÃ»§×éÒª¼Ó)   or
+åŠ å…¥sudoers
+sudo usermod -a -G admin username(-a å…¶ä»–ç”¨æˆ·ç»„è¦åŠ )   or
 chmod u+w /etc/sudoers
 yourUserName   ALL=(ALL:ALL) ALL
 chmod u-w /etc/sudoers
 
-ÅäÖÃ
+é…ç½®
 winscp root:
 	vi /etc/ssh/sshd_config
-	ÕÒµ½ PermitRootLogin no ¸Ä³Éyes
-	ÖØÆôsshd·şÎñ  #service sshd restart
+	æ‰¾åˆ° PermitRootLogin no æ”¹æˆyes
+	é‡å¯sshdæœåŠ¡  #service sshd restart
 
 sudo passwd
  
-ÓÃ»§Ïà¹Ø£º
-sudo adduser xxx ÕâÑùµÄÃüÁî»áÔÚhomeÄ¿Â¼ÏÂÌí¼ÓÒ»¸öÕÊºÅ
-sudo useradd xxx ½ö½öÊÇÌí¼ÓÓÃ»§£¬ ²»»áÔÚhomeÄ¿Â¼Ìí¼ÓÕÊºÅ
+ç”¨æˆ·ç›¸å…³ï¼š
+sudo adduser xxx è¿™æ ·çš„å‘½ä»¤ä¼šåœ¨homeç›®å½•ä¸‹æ·»åŠ ä¸€ä¸ªå¸å·
+sudo useradd xxx ä»…ä»…æ˜¯æ·»åŠ ç”¨æˆ·ï¼Œ ä¸ä¼šåœ¨homeç›®å½•æ·»åŠ å¸å·
 sudo userdel -r newuser
 passwd qpmz1397
 
@@ -23,122 +23,122 @@ ssh
 	apt-get install openssh-client
 	apt-get install openssh-server
 ************************************************************************
-date ÏÔÊ¾ÈÕÆÚµÄÖ¸Áî
+date æ˜¾ç¤ºæ—¥æœŸçš„æŒ‡ä»¤
 
-cal ÏÔÊ¾ÈÕÀúµÄÖ¸Áî
+cal æ˜¾ç¤ºæ—¥å†çš„æŒ‡ä»¤
 
-bc ¼ÆËãÆ÷
+bc è®¡ç®—å™¨
 
-[Ctrl]-d°´¼ü---Í¨³£´ú±í×Å£º¡º¼üÅÌÊäÈë½áÊø(End Of File, EOF ½ä End OfInput)¡» =exit
+[Ctrl]-dæŒ‰é”®---é€šå¸¸ä»£è¡¨ç€ï¼šã€é”®ç›˜è¾“å…¥ç»“æŸ(End Of File, EOF æˆ’ End OfInput)ã€ =exit
 
-man manaulÊÖ²á  1¡¢Standard commands £¨±ê×¼ÃüÁî£©
-		2¡¢System calls £¨ÏµÍ³µ÷ÓÃ£©
-		3¡¢Library functions £¨¿âº¯Êı£©
-		4¡¢Special devices £¨Éè±¸ËµÃ÷£©
-		5¡¢File formats £¨ÎÄ¼ş¸ñÊ½£©
-		6¡¢Games and toys £¨ÓÎÏ·ºÍÓéÀÖ£©
-		7¡¢Miscellaneous £¨ÔÓÏî£©
-		8¡¢Administrative Commands £¨¹ÜÀíÔ±ÃüÁî£©
-		9 ÆäËû£¨LinuxÌØ¶¨µÄ£©£¬ ÓÃÀ´´æ·ÅÄÚºËÀıĞĞ³ÌĞòµÄÎÄµµ¡£
+man manaulæ‰‹å†Œ  1ã€Standard commands ï¼ˆæ ‡å‡†å‘½ä»¤ï¼‰
+		2ã€System calls ï¼ˆç³»ç»Ÿè°ƒç”¨ï¼‰
+		3ã€Library functions ï¼ˆåº“å‡½æ•°ï¼‰
+		4ã€Special devices ï¼ˆè®¾å¤‡è¯´æ˜ï¼‰
+		5ã€File formats ï¼ˆæ–‡ä»¶æ ¼å¼ï¼‰
+		6ã€Games and toys ï¼ˆæ¸¸æˆå’Œå¨±ä¹ï¼‰
+		7ã€Miscellaneous ï¼ˆæ‚é¡¹ï¼‰
+		8ã€Administrative Commands ï¼ˆç®¡ç†å‘˜å‘½ä»¤ï¼‰
+		9 å…¶ä»–ï¼ˆLinuxç‰¹å®šçš„ï¼‰ï¼Œ ç”¨æ¥å­˜æ”¾å†…æ ¸ä¾‹è¡Œç¨‹åºçš„æ–‡æ¡£ã€‚
 
-sync Êı¾İÍ¬²½Ğ´Èë´ÅÅÌ
+sync æ•°æ®åŒæ­¥å†™å…¥ç£ç›˜
 
-shutdown -t ¹Ø»úÖ¸Áî shutdown -r now
+shutdown -t å…³æœºæŒ‡ä»¤ shutdown -r now
 
-reboot, halt,poweroff  ÖØÆô£¬¹Ø»ú
+reboot, halt,poweroff  é‡å¯ï¼Œå…³æœº
 
 
-init 	--run level 0 :¹Ø»ú [init 0]
-	--run level 3 :´¿ÎÄ±¾Ä£Ê½
-	--run level 5 :º¬ÓĞÍ¼ĞÎ½Ó¿ÚÄ£Ê½
-	--run level 6 :ÖØĞÂÆô¶¯
+init 	--run level 0 :å…³æœº [init 0]
+	--run level 3 :çº¯æ–‡æœ¬æ¨¡å¼
+	--run level 5 :å«æœ‰å›¾å½¢æ¥å£æ¨¡å¼
+	--run level 6 :é‡æ–°å¯åŠ¨
 
-chgrp ¸Ä±äÎÄ¼şµÄËùÊôÈº×é
+chgrp æ”¹å˜æ–‡ä»¶çš„æ‰€å±ç¾¤ç»„
 
-chown ¸Ä±äÎÄ¼şÓµÓĞÕß
+chown æ”¹å˜æ–‡ä»¶æ‹¥æœ‰è€…
 
-chmod ¸Ä±äÎÄ¼şµÄÈ¨ÏŞ(777 ÍêÈ«)
+chmod æ”¹å˜æ–‡ä»¶çš„æƒé™(777 å®Œå…¨)
 
 uname -r 
-lsb_release -a  ²é¿´Ò»Ğ©LinuxĞÅÏ¢
+lsb_release -a  æŸ¥çœ‹ä¸€äº›Linuxä¿¡æ¯
 
-cat ÓÉµÚÒ»ĞĞ¿ªÊ¼ÏÔÊ¾µµ°¸ÄÚÈİ -n ĞĞºÅ
+cat ç”±ç¬¬ä¸€è¡Œå¼€å§‹æ˜¾ç¤ºæ¡£æ¡ˆå†…å®¹ -n è¡Œå·
 
-tac ´Ó×îºóÒ»ĞĞ¿ªÊ¼ÏÔÊ¾
+tac ä»æœ€åä¸€è¡Œå¼€å§‹æ˜¾ç¤º
 
-nl ÏÔÊ¾µÄÊ±ºò£¬Ë³µÀÊä³öĞĞºÅ
+nl æ˜¾ç¤ºçš„æ—¶å€™ï¼Œé¡ºé“è¾“å‡ºè¡Œå·
 
-more Ò»Ò³Ò»Ò³µÄÏÔÊ¾µµ°¸ÄÚÈİ
+more ä¸€é¡µä¸€é¡µçš„æ˜¾ç¤ºæ¡£æ¡ˆå†…å®¹
 
-less =more +¿ÉÒÔÏòÇ°·­Ò³
+less =more +å¯ä»¥å‘å‰ç¿»é¡µ
 
-head Ö»¿´Í·¼¸ĞĞ
+head åªçœ‹å¤´å‡ è¡Œ
 
-tail Ö»¿´Î²¼¸ĞĞ
+tail åªçœ‹å°¾å‡ è¡Œ
 
-od ÒÔ¶ş½øÖÆµÄ·ÅÖÃ¶ÁÈ¡µµ°¸ÄÚÈİ
+od ä»¥äºŒè¿›åˆ¶çš„æ”¾ç½®è¯»å–æ¡£æ¡ˆå†…å®¹
 
-umask µµ°¸Ô¤ÉèÈ¨ÏŞ
+umask æ¡£æ¡ˆé¢„è®¾æƒé™
 
-chattr ÅäÖÃÎÄ¼şµµ°¸Òş²ØÊôĞÔ
+chattr é…ç½®æ–‡ä»¶æ¡£æ¡ˆéšè—å±æ€§
 
-lsattr ÏÔÊ¾µµ°¸Òş²ØÊôĞÔ
+lsattr æ˜¾ç¤ºæ¡£æ¡ˆéšè—å±æ€§
 
-file ¹Û²ìÎÄ¼şÀàĞÍ
+file è§‚å¯Ÿæ–‡ä»¶ç±»å‹
 
-which Ñ°ÕÒ¡¾Ö´ĞĞµ²¡¿
+which å¯»æ‰¾ã€æ‰§è¡ŒæŒ¡ã€‘
 
-whereis Ñ°ÕÒÌØ¶¨µµ°¸
+whereis å¯»æ‰¾ç‰¹å®šæ¡£æ¡ˆ
 
-locate Ñ°ÕÒÌØ¶¨µµ°¸
+locate å¯»æ‰¾ç‰¹å®šæ¡£æ¡ˆ
 
-find Ñ°ÕÒÌØ¶¨µµ°¸
+find å¯»æ‰¾ç‰¹å®šæ¡£æ¡ˆ
 
-gzip£¬zcat Ñ¹ËõÎÄ¼şºÍ¶ÁÈ¡Ñ¹ËõÎÄ¼ş
+gzipï¼Œzcat å‹ç¼©æ–‡ä»¶å’Œè¯»å–å‹ç¼©æ–‡ä»¶
 
-bzip2£¬bzcat Ñ¹ËõÎÄ¼şºÍ¶ÁÈ¡Ñ¹ËõÎÄ¼ş
+bzip2ï¼Œbzcat å‹ç¼©æ–‡ä»¶å’Œè¯»å–å‹ç¼©æ–‡ä»¶
 
-tar Ñ¹ËõÎÄ¼şºÍ¶ÁÈ¡Ñ¹ËõÎÄ¼ş
-	 tar -cvf /tmp/etc.tar /etc¡¡¡¡¡¡¡¡<==½ö´ò°ü£¬²»Ñ¹Ëõ£¡
-	 tar -zcvf /tmp/etc.tar.gz /etc¡¡¡¡<==´ò°üºó£¬ÒÔ gzip Ñ¹Ëõ
-	 tar -jcvf /tmp/etc.tar.bz2 /etc¡¡¡¡<==´ò°üºó£¬ÒÔ bzip2 Ñ¹Ëõ
+tar å‹ç¼©æ–‡ä»¶å’Œè¯»å–å‹ç¼©æ–‡ä»¶
+	 tar -cvf /tmp/etc.tar /etcã€€ã€€ã€€ã€€<==ä»…æ‰“åŒ…ï¼Œä¸å‹ç¼©ï¼
+	 tar -zcvf /tmp/etc.tar.gz /etcã€€ã€€<==æ‰“åŒ…åï¼Œä»¥ gzip å‹ç¼©
+	 tar -jcvf /tmp/etc.tar.bz2 /etcã€€ã€€<==æ‰“åŒ…åï¼Œä»¥ bzip2 å‹ç¼©
 
 
-pwd ÏÔÊ¾µ±Ç°ËùÔÚÄ¿Â¼
+pwd æ˜¾ç¤ºå½“å‰æ‰€åœ¨ç›®å½•
 
-cp ¸´ÖÆ
+cp å¤åˆ¶
 
-mv ÒÆ¶¯ÎÄ¼ş/ÎÄ¼ş¼Ğ
+mv ç§»åŠ¨æ–‡ä»¶/æ–‡ä»¶å¤¹
 
-touch ĞÂ½¨ÎÄ¼ş
+touch æ–°å»ºæ–‡ä»¶
 
-mkdir  ´´½¨ÎÄ¼ş¼Ğ
+mkdir  åˆ›å»ºæ–‡ä»¶å¤¹
 
-rmdir É¾³ı¿ÕÄ¿Â¼
+rmdir åˆ é™¤ç©ºç›®å½•
 
-rm -irf É¾³ıÎÄ¼ş¼Ğ/ÎÄ¼ş
+rm -irf åˆ é™¤æ–‡ä»¶å¤¹/æ–‡ä»¶
 
-cd ´ò¿ªÎÄ¼ş¼Ğ cd .. »Øµ½ÉÏ¼¶Ä¿Â¼
+cd æ‰“å¼€æ–‡ä»¶å¤¹ cd .. å›åˆ°ä¸Šçº§ç›®å½•
 
-ls ÏÔÊ¾µ±Ç°Ä¿Â¼ÄÚÈİ
+ls æ˜¾ç¤ºå½“å‰ç›®å½•å†…å®¹
 
-ĞŞ¸ÄÈ¨ÏŞÃüÁî
+ä¿®æ”¹æƒé™å‘½ä»¤
 
-chmod 777 ÎÄ¼şÃû
+chmod 777 æ–‡ä»¶å
 
 1.chmod 577 /home/stuser -R
 2.umask -p 0200
-3.chown XXXX YYYY (XXXX ÎªÓÃ»§Ãû YYYYÎªÎÄ¼şÃû£©
+3.chown XXXX YYYY (XXXX ä¸ºç”¨æˆ·å YYYYä¸ºæ–‡ä»¶åï¼‰
  
-È¨ÏŞÁĞ±í
+æƒé™åˆ—è¡¨
 
--rw-------   (600) Ö»ÓĞËùÓĞÕß²ÅÓĞ¶ÁºÍĞ´µÄÈ¨ÏŞ
--rw-r--r--   (644) Ö»ÓĞËùÓĞÕß²ÅÓĞ¶ÁºÍĞ´µÄÈ¨ÏŞ£¬×éÈººÍÆäËûÈËÖ»ÓĞ¶ÁµÄÈ¨ÏŞ
--rwx------   (700) Ö»ÓĞËùÓĞÕß²ÅÓĞ¶Á£¬Ğ´£¬Ö´ĞĞµÄÈ¨ÏŞ
--rwxr-xr-x   (755) Ö»ÓĞËùÓĞÕß²ÅÓĞ¶Á£¬Ğ´£¬Ö´ĞĞµÄÈ¨ÏŞ£¬×éÈººÍÆäËûÈËÖ»ÓĞ¶ÁºÍÖ´ĞĞµÄÈ¨ÏŞ
--rwx--x--x   (711) Ö»ÓĞËùÓĞÕß²ÅÓĞ¶Á£¬Ğ´£¬Ö´ĞĞµÄÈ¨ÏŞ£¬×éÈººÍÆäËûÈËÖ»ÓĞÖ´ĞĞµÄÈ¨ÏŞ
--rw-rw-rw-   (666) Ã¿¸öÈË¶¼ÓĞ¶ÁĞ´µÄÈ¨ÏŞ
--rwxrwxrwx   (777) Ã¿¸öÈË¶¼ÓĞ¶ÁĞ´ºÍÖ´ĞĞµÄÈ¨ÏŞ
+-rw-------   (600) åªæœ‰æ‰€æœ‰è€…æ‰æœ‰è¯»å’Œå†™çš„æƒé™
+-rw-r--r--   (644) åªæœ‰æ‰€æœ‰è€…æ‰æœ‰è¯»å’Œå†™çš„æƒé™ï¼Œç»„ç¾¤å’Œå…¶ä»–äººåªæœ‰è¯»çš„æƒé™
+-rwx------   (700) åªæœ‰æ‰€æœ‰è€…æ‰æœ‰è¯»ï¼Œå†™ï¼Œæ‰§è¡Œçš„æƒé™
+-rwxr-xr-x   (755) åªæœ‰æ‰€æœ‰è€…æ‰æœ‰è¯»ï¼Œå†™ï¼Œæ‰§è¡Œçš„æƒé™ï¼Œç»„ç¾¤å’Œå…¶ä»–äººåªæœ‰è¯»å’Œæ‰§è¡Œçš„æƒé™
+-rwx--x--x   (711) åªæœ‰æ‰€æœ‰è€…æ‰æœ‰è¯»ï¼Œå†™ï¼Œæ‰§è¡Œçš„æƒé™ï¼Œç»„ç¾¤å’Œå…¶ä»–äººåªæœ‰æ‰§è¡Œçš„æƒé™
+-rw-rw-rw-   (666) æ¯ä¸ªäººéƒ½æœ‰è¯»å†™çš„æƒé™
+-rwxrwxrwx   (777) æ¯ä¸ªäººéƒ½æœ‰è¯»å†™å’Œæ‰§è¡Œçš„æƒé™
 
 
 Centos php
@@ -151,14 +151,14 @@ yum install php-mysql php-gd php-imap php-ldap php-odbc php-pear php-xml php-xml
 service mysqld start
 
 
-Ubuntu Lamp£¨16°æ±¾ºóÎªphp7.0, Ö®Ç°Îªphp5£©
-£¨LNMP£©sudo apt-get install nginx php7.0-cli php7.0-cgi php7.0-fpm php7.0-mcrypt php7.0-mysql mysql-client-core-5.5 mysql-server-core-5.5
+Ubuntu Lampï¼ˆ16ç‰ˆæœ¬åä¸ºphp7.0, ä¹‹å‰ä¸ºphp5ï¼‰
+ï¼ˆLNMPï¼‰sudo apt-get install nginx php7.0-cli php7.0-cgi php7.0-fpm php7.0-mcrypt php7.0-mysql mysql-client-core-5.5 mysql-server-core-5.5
 apt-get install mysql-server
-apt-get install apache2£¨config£º/etc/apache2	Document:/var/www£©
+apt-get install apache2ï¼ˆconfigï¼š/etc/apache2	Document:/var/wwwï¼‰
 apt-get install php7.0 libapache2-mod-php7.0
 apt-get install php7.0-mysql php7.0-curl php7.0-gd php7.0-intl php-pear php7.0-ps php7.0-pspell php7.0-recode php7.0-snmp php7.0-sqlite php7.0-tidy php7.0-xmlrpc php7.0-xsl
 apt-get install redis-server
-(redisÀ©Õ¹)wget https://github.com/nicolasff/phpredis/zipball/master -O php-redis.zip
+(redisæ‰©å±•)wget https://github.com/nicolasff/phpredis/zipball/master -O php-redis.zip
 
 
 

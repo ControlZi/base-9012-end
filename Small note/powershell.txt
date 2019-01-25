@@ -1,6 +1,6 @@
 Start-Process notepad -Verb runas
-(Get-WmiObject -query ¡®select * from SoftwareLicensingService¡¯).OA3xOriginalProductKey  £¨²é¿´ÃÜÔ¿  VK7JG-NPHTM-C97JM-9MPGT-3V66T£©
+(Get-WmiObject -query â€˜select * from SoftwareLicensingServiceâ€™).OA3xOriginalProductKey  ï¼ˆæŸ¥çœ‹å¯†é’¥  VK7JG-NPHTM-C97JM-9MPGT-3V66Tï¼‰
 
 
 netstat -aon|findstr "80"
-tasklist|findstr "2448"  ²é¿´¶Ë¿Ú
+tasklist|findstr "2448"  æŸ¥çœ‹ç«¯å£

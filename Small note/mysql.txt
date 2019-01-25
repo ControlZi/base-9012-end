@@ -1,51 +1,51 @@
-±àÂë£º
+ç¼–ç ï¼š
 show variables like '%char%';
 /etc/my.cnf [mysqld] character-set-server=utf8  [client] default-character-set=utf8  [mysql] default-character-set=utf8
-»òÕßÔÚ
+æˆ–è€…åœ¨
 [mysqld] 
 character_set_server=utf8 
 init_connect='SET NAMES utf8'
 
-ÓÃ»§£º
+ç”¨æˆ·ï¼š
 CREATE USER username IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password'
 EVOKE ALL PRIVILEGES ON *.* FROM 'username'@'localhost';
 GRANT ALL PRIVILEGES ON dbname.* TO 'username'@'localhost' IDENTIFIED BY 'password
 GRANT SELECT, UPDATE ON wordpress.* TO 'username'@'localhost' IDENTIFIED BY 'password'
-FLUSH PRIVILEGES;(Ë¢ĞÂÈ¨ÏŞ)
+FLUSH PRIVILEGES;(åˆ·æ–°æƒé™)
 DROP USER username@localhost;
 SELECT User, Host FROM user;
 
-ĞŞ¸ÄÃÜÂë£º
+ä¿®æ”¹å¯†ç ï¼š
 mysqladmin-uroot -pold password new
-mysql> update user setpassword=password(¡±xueok654123¡å) where user=¡¯root¡¯;
+mysql> update user setpassword=password(â€xueok654123â€³) where user=â€™rootâ€™;
 
-Êı¾İ±¸·İºÍµ¼³ö
+æ•°æ®å¤‡ä»½å’Œå¯¼å‡º
 shell>mysqldump -h host -u root -p dbname > dbname_backup.sql
 shell>mysqladmin -h myhost -u root -p create dbname
 shell>mysql -h host -u root -p dbname < dbname_backup.sql
 mysql>source /home/mysql.sql;
 
 selectversion(),current_date;
-²éÑ¯Ê±¼ä£ºselect now();
-²éÑ¯µ±Ç°ÓÃ»§£ºselect user();
-²éÑ¯Êı¾İ¿â°æ±¾£ºselect version();
-²éÑ¯µ±Ç°Ê¹ÓÃµÄÊı¾İ¿â£ºselect database();
+æŸ¥è¯¢æ—¶é—´ï¼šselect now();
+æŸ¥è¯¢å½“å‰ç”¨æˆ·ï¼šselect user();
+æŸ¥è¯¢æ•°æ®åº“ç‰ˆæœ¬ï¼šselect version();
+æŸ¥è¯¢å½“å‰ä½¿ç”¨çš„æ•°æ®åº“ï¼šselect database();
 
 
-Æô¶¯£ºnet start mySql;
-½øÈë£ºmysql -u root -p/mysql -hlocalhost -u root -p databaseName;
-ÁĞ³öÊı¾İ¿â£ºshow databases;
-Ñ¡ÔñÊı¾İ¿â£ºuse databaseName;
-ÁĞ³ö±í¸ñ£ºshow tables£»
-ÏÔÊ¾±í¸ñÁĞµÄÊôĞÔ£ºshow columns fromtableName£»
-½¨Á¢Êı¾İ¿â£ºsource fileName.txt;
-desc ±íÃû³Æ;
+å¯åŠ¨ï¼šnet start mySql;
+è¿›å…¥ï¼šmysql -u root -p/mysql -hlocalhost -u root -p databaseName;
+åˆ—å‡ºæ•°æ®åº“ï¼šshow databases;
+é€‰æ‹©æ•°æ®åº“ï¼šuse databaseName;
+åˆ—å‡ºè¡¨æ ¼ï¼šshow tablesï¼›
+æ˜¾ç¤ºè¡¨æ ¼åˆ—çš„å±æ€§ï¼šshow columns fromtableNameï¼›
+å»ºç«‹æ•°æ®åº“ï¼šsource fileName.txt;
+desc è¡¨åç§°;
 
 
 create table  tbname(
 id int not null auto_increment [primary key],
-name varchar(20) not null default '¾­Àí', #Éè¶¨Ä¬ÈÏÖµ
+name varchar(20) not null default 'ç»ç†', #è®¾å®šé»˜è®¤å€¼
 description varchar(100),
 primary key(id)
 );
