@@ -2,13 +2,17 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import ElementUI from 'element-ui';
-import './styles.scss';
-import './util/directive.js';
+import './registerServiceWorker';
+import '@/assets/icons/index.js';
+// import components from './components/index';
 
-Vue.use(ElementUI);
+import ElementUI from 'element-ui';
+import '@/style/index.scss';
 
 Vue.config.productionTip = false;
+
+Vue.use(ElementUI);
+// Vue.use(components);
 
 new Vue({
   router,

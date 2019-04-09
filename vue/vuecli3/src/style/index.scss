@@ -1,0 +1,51 @@
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: './theme-chalk/fonts';
+
+@import './theme-chalk/index';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.el-header {
+  padding: 0;
+}
+
+.clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// dialog
+.dialog-header {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #303133;
+}
+.el-dialog--center .el-dialog__body {
+  padding: 0 25px 0;
+}
+
+//button
+.el-button-group .el-button.active {
+  color: #4265ed;
+  border-color: #c6d1fa;
+  background-color: #ecf0fd;
+}
+
+.algin-left {
+  text-align: left;
+}
+.algin-right {
+  text-align: right;
+}
+
+.x-auto {
+  overflow-x: auto;
+}

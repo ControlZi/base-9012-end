@@ -9,9 +9,7 @@ module.exports = {
 
   rules: {
     'no-console': 'off',
-    'no-debugger': 'off',
-    'vue/max-attributes-per-line': 'off',
-    'vue/html-self-closing': 'off'
+    'no-debugger': 'off'
   },
 
   parserOptions: {
@@ -19,6 +17,6 @@ module.exports = {
   },
 
   'extends': [
-    'plugin:vue/strongly-recommended'
+    'plugin:vue/essential'
   ]
 };

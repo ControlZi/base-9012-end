@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import layout from '@/views/layout/index';
 
 Vue.use(Router);
 
@@ -9,63 +10,97 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: () => import('@/views/home')
+      redirect: '/basic',
+      unNav: true
     },
     {
       path: '/login',
-      name: 'Login',
-      component: () => import('@/views/login')
+      name: 'login',
+      unNav: true,
+      component: () => import('@/views/login/index')
     },
     {
-      path: '/test',
-      name: 'Test',
-      component: () => import('@/views/test'),
+      path: '/basic',
+      component: layout,
       children: [
         {
-          // 杂
-          path: 'blend',
-          name: 'Blend',
-          component: () => import('@/views/test/blend')
-        },
+          path: '',
+          name: 'basic',
+          component: () => import('@/views/basicInfo/index'),
+          meta: {
+            title: '基础信息'
+          }
+        }
+      ]
+    },
+    {
+      path: '/progress',
+      component: layout,
+      children: [
         {
-          // 为了不把if和for写在同一下标签上，把if写在template
-          path: 'if-for-template',
-          name: 'IfForTemplate',
-          component: () => import('@/views/test/if-for-template')
-        },
+          path: '',
+          name: 'progress',
+          component: () => import('@/views/progressInfo/index'),
+          meta: {
+            title: '进度信息'
+          }
+        }
+      ]
+    },
+    {
+      path: '/license',
+      component: layout,
+      children: [
         {
-          // 自定义指令
-          path: 'directive',
-          name: 'Directive',
-          component: () => import('@/views/test/directive')
-        },
+          path: '',
+          name: 'license',
+          component: () => import('@/views/licenseInfo/index'),
+          meta: {
+            title: '证照信息'
+          }
+        }
+      ]
+    },
+    {
+      path: '/contract',
+      component: layout,
+      children: [
         {
-          // 依赖注入
-          path: 'provide',
-          name: 'Provide',
-          component: () => import('@/views/test/provide')
-        },
+          path: '',
+          name: 'contract',
+          component: () => import('@/views/contract/index'),
+          meta: {
+            title: '合约台账'
+          }
+        }
+      ]
+    },
+    {
+      path: '/user',
+      component: layout,
+      children: [
         {
-          // 递归组件
-          path: 'recursion',
-          name: 'Recursion',
-          component: () => import('@/views/test/recursion')
+          path: '',
+          name: 'user',
+          component: () => import('@/views/user/index'),
+          meta: {
+            title: '用户管理'
+          }
         }
       ]
     },
     {
       path: '*',
-      redirect: '/'
+      redirect: '/',
+      unNav: true
     }
     // {
-    //   path: "/about",
-    //   name: "about",
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () =>
-    //     import(/* webpackChunkName: "about" */ "@/views/About.vue")
+    //   path: '/about',
+    //   name: 'about',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    //   component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
     // }
   ]
 });

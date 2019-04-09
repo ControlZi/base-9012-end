@@ -1,4 +1,4 @@
-# apple
+# project
 
 ## Project setup
 ```
