@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import store from '@/store';
 import layout from '@/views/layout/index';
 
 Vue.use(Router);
 
-export default new Router({
+export const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -29,6 +30,14 @@ export default new Router({
           component: () => import('@/views/basicInfo/index'),
           meta: {
             title: '基础信息'
+          }
+        },
+        {
+          path: 'deal',
+          name: 'basicDeal',
+          component: () => import('@/views/basicInfo/deal'),
+          meta: {
+            title: '基础信息新增'
           }
         }
       ]
@@ -104,3 +113,27 @@ export default new Router({
     // }
   ]
 });
+
+const whiteList = ['/login'];
+router.beforeEach((to, from, next) => {
+  if (whiteList.includes(to.path)) {
+    next();
+  } else {
+    store
+      .dispatch('checkLogin')
+      .then(res => {
+        if (res) {
+          next();
+        } else {
+          // store.dispatch('logout');
+          next('/login');
+        }
+      })
+      .catch(err => {
+        console.log('catch: ');
+        next('/login');
+      });
+  }
+});
+
+export default router;

@@ -1,9 +1,8 @@
-// import Icon from 'vue-svg-icon/Icon.vue';
-import '@/assets/icons/index.js';
+import baseFormItem from './baseFormItem/index.vue';
 
 const components = {
   install: function(Vue) {
-    // Vue.component('icon', Icon);
+    Vue.component('baseFormItem', baseFormItem);
   }
 };
 

@@ -20,7 +20,9 @@ module.exports = {
     port: 8133,
     proxy: {
       '/api': {
-        target: 'http://10.128.39.169:7001',
+        target: 'http://10.130.36.176:7473',
+        // target: 'http://172.16.42.24:7473',
+        // target: 'http://172.16.42.25:7473', //wxs
         pathRewrite: { '^/api': '/' },
         changeOrigin: true
       }

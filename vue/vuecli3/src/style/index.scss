@@ -2,6 +2,7 @@
 $--font-path: './theme-chalk/fonts';
 
 @import './theme-chalk/index';
+@import './global.scss';
 
 body {
   margin: 0;
@@ -37,6 +38,45 @@ body {
   color: #4265ed;
   border-color: #c6d1fa;
   background-color: #ecf0fd;
+}
+
+// 嵌入内部表格样式
+.inner-table {
+  width: 100%;
+}
+.el-table__expanded-cell {
+  padding: 0 80px 0 278px !important;
+  td {
+    width: 16%;
+  }
+}
+
+// el-form-item 里面的datepick 100%
+.inner-width {
+  .el-date-editor.el-input {
+    width: 100%;
+  }
+  .el-select {
+    width: 100%;
+  }
+  .el-form-item__content {
+    display: flex;
+  }
+}
+
+// icon
+.svg-icon.add {
+  width: 1em;
+  height: 1em;
+  margin-top: 2px;
+}
+
+.right-error {
+  .el-form-item__error {
+    right: 1em;
+    left: unset;
+    top: calc(50% - 8px);
+  }
 }
 
 .algin-left {

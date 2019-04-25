@@ -1,5 +1,7 @@
 # vue svg 配置
 
+#### 组件
+
 ```vue
 // svgIcon.vue
 <template>
@@ -47,6 +49,8 @@ export default {
 </style>
 ```
 
+#### webpack 配置
+
 ```js
 // vue.config.js 配置 （注意，里面配置的顺序好像有要求，不然会报错。配置后要重启）
 const svgRule = config.module.rule('svg');
@@ -69,6 +73,8 @@ const svgRule = config.module.rule('svg');
         }
 }
 ```
+
+#### 引入(require.context)
 
 ```js
 // 引入组件

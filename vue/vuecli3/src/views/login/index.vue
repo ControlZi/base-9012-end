@@ -7,55 +7,111 @@
         </p>
         <div class="form-item">
           <el-input placeholder="账号" v-model="form.username">
-            <p slot="prefix" style="margin: 6px 0;">
-              <svg-icon name="user"></svg-icon>
+            <p slot="prefix" style="margin: 7px 12px;">
+              <svg-icon name="user" iconClass="login-icon"></svg-icon>
             </p>
           </el-input>
         </div>
         <div class="form-item">
           <el-input placeholder="密码" v-model="form.password" show-password>
-            <p slot="prefix" style="margin: 6px 0;">
-              <svg-icon name="password"></svg-icon>
+            <p slot="prefix" style="margin: 7px 12px;">
+              <svg-icon name="password" iconClass="login-icon"></svg-icon>
             </p>
           </el-input>
         </div>
         <div class="remember clearfix">
-          <el-checkbox>记住我</el-checkbox>
+          <el-checkbox v-model="form.isRemember">记住我</el-checkbox>
         </div>
         <div class="submit-btn">
           <el-button type="primary" @click="login">登录</el-button>
         </div>
       </div>
-      <div class="login-form" v-show="ding">
-        <p class="login-header">钉钉扫码登录
+      <div class="login-form" v-if="ding">
+        <p class="login-header" style="margin-bottom: 0">钉钉扫码登录
           <span class="other-type clearfix" @click="ding = !ding">账号登录></span>
         </p>
-        <div class="qr-code">
-          <div class="qr-box">
-            <img src="" alt="二维码">
-          </div>
+        <div class="qr-code" id="ding">
+          <!-- <div class="qr-box">
+          </div> -->
         </div>
-        <p class="footer">钉钉App - 首页右上角加号 - 扫一扫</p>
-
+        <remote-js js-url="//g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js" @load-js-finish="apple"></remote-js>
+        <!-- <p class="footer">钉钉App - 首页右上角加号 - 扫一扫</p> -->
       </div>
     </div>
+    <!--<remote-js key="123" js-url='http://g.alicdn.com/sd/ncpc/nc.js?t=2015052012' @load-js-finish='loadRongJs'></remote-js>-->
+    <!-- <script src="//g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js"></script> -->
   </div>
 </template>
 
 <script>
+import remoteJs from '@/components/remote';
+import userAPI from '@/service/user.js';
 export default {
+  components: { remoteJs },
   data() {
     return {
       ding: false,
       form: {
         username: '',
-        password: ''
+        password: '',
+        isRemember: false
       }
     };
   },
+  created() {
+    let username = localStorage.getItem('username', this.form.username);
+    if (username) {
+      this.form.username = username;
+      this.form.isRemember = true;
+    }
+
+  },
+  mounted() {
+    var hanndleMessage = function (event) {
+      var origin = event.origin;
+      // console.log("origin", event);
+      if (origin == "https://login.dingtalk.com") { //判断是否来自ddLogin扫码事件。
+        var loginTmpCode = event.data; //拿到loginTmpCode后就可以在这里构造跳转链接进行跳转了
+        // console.log("loginTmpCode", loginTmpCode);
+      }
+    };
+    if (typeof window.addEventListener != 'undefined') {
+      window.addEventListener('message', hanndleMessage, false);
+    } else if (typeof window.attachEvent != 'undefined') {
+      window.attachEvent('onmessage', hanndleMessage);
+    }
+  },
   methods: {
+    apple() {
+      var appid = 'dingoa3sotoe06b7c6nhln';
+      var redirect_uri = 'http://csproject.yto.net.cn:7473/auth/ddlogin';
+      // var redirect_uri = '/DDLoginApi?id=test001';
+      var dingurl = `https://oapi.dingtalk.com/connect/oauth2/sns_authorize?appid=${appid}&response_type=code&scope=snsapi_login&state=STATE&redirect_uri=${redirect_uri}`;
+      var obj = DDLogin({
+        id: "ding",//这里需要你在自己的页面定义一个HTML标签并设置id，例如<div id="login_container"></div>或<span id="login_container"></span>
+        goto: encodeURIComponent(dingurl), //请参考注释里的方式
+        style: "border:none;background-color:#FFFFFF;",
+        width: "300",
+        height: "350"
+      });
+    },
     login() {
-      this.$router.push('/basic');
+      // this.$router.push('/basic');
+      userAPI.login(this.form).then(res => {
+        if (res.code === true) {
+          let data = res.user;
+          data.token = res.message;
+          this.$store.dispatch('setUserInfo', data);
+          if (this.form.isRemember) {
+            localStorage.setItem('username', this.form.username);
+          } else {
+            localStorage.removeItem('username');
+          }
+          this.$router.push('/basic');
+        } else {
+          this.showMsg(res.message, 'error');
+        }
+      });
     }
   }
 }
@@ -73,8 +129,15 @@ export default {
     height: 380px;
     background: rgba(255, 255, 255, 1);
     border-radius: 3px;
-    .login-form {
+    .login-form /deep/ {
       padding: 10px 30px;
+      .login-icon {
+        height: 20px;
+        width: 20px;
+      }
+      .el-input--prefix .el-input__inner {
+        padding-left: 52px;
+      }
       .login-header {
         text-align: left;
         font-size: 20px;
@@ -98,10 +161,9 @@ export default {
         }
       }
       .qr-code {
-        margin: 20px auto;
-        height: 200px;
-        width: 200px;
-        border: 1px solid rgba(204, 204, 204, 1);
+        margin: 0;
+        height: auto;
+        width: 100%;
         .qr-box {
           width: 180px;
           height: 180px;
