@@ -1,3 +1,9 @@
+#### 20190424
+
+- [chrome 插件](https://zhaoolee.gitbooks.io/chrome/content/)
+
+---
+
 #### 20190423
 
 - 网道 [标准库](https://wangdoc.com/javascript/stdlib/index.html) Date , RegExp, JSON
