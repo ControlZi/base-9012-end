@@ -29,7 +29,7 @@ export const router = new Router({
           name: 'basic',
           component: () => import('@/views/basicInfo/index'),
           meta: {
-            title: '基础信息'
+            title: 'demo'
           }
         },
         {
@@ -42,6 +42,62 @@ export const router = new Router({
         }
       ]
     },
+    {
+      path: '/test',
+      component: layout,
+      children: [
+        {
+          path: '',
+          name: 'test',
+          component: () => import('@/views/test'),
+          meta: {
+            title: 'test'
+          }
+        },
+        {
+          // 杂
+          path: 'blend',
+          name: 'Blend',
+          component: () => import('@/views/test/blend')
+        },
+        {
+          // 为了不把if和for写在同一下标签上，把if写在template
+          path: 'if-for-template',
+          name: 'IfForTemplate',
+          component: () => import('@/views/test/if-for-template')
+        },
+        {
+          // 自定义指令
+          path: 'directive',
+          name: 'Directive',
+          component: () => import('@/views/test/directive')
+        },
+        {
+          // 依赖注入
+          path: 'provide',
+          name: 'Provide',
+          component: () => import('@/views/test/provide')
+        },
+        {
+          // 递归组件
+          path: 'recursion',
+          name: 'Recursion',
+          component: () => import('@/views/test/recursion')
+        },
+        {
+          // 动态添加HTML代码
+          path: 'dynamic-html',
+          name: 'DynamicHtml',
+          component: () => import('@/views/test/dynamic-html')
+        }
+      ]
+    },
+    {
+      path: '*',
+      redirect: '/',
+      unNav: true
+    }
+    /*
     {
       path: '/progress',
       component: layout,
@@ -98,11 +154,7 @@ export const router = new Router({
         }
       ]
     },
-    {
-      path: '*',
-      redirect: '/',
-      unNav: true
-    }
+    */
     // {
     //   path: '/about',
     //   name: 'about',
@@ -114,26 +166,26 @@ export const router = new Router({
   ]
 });
 
-const whiteList = ['/login'];
-router.beforeEach((to, from, next) => {
-  if (whiteList.includes(to.path)) {
-    next();
-  } else {
-    store
-      .dispatch('checkLogin')
-      .then(res => {
-        if (res) {
-          next();
-        } else {
-          // store.dispatch('logout');
-          next('/login');
-        }
-      })
-      .catch(err => {
-        console.log('catch: ');
-        next('/login');
-      });
-  }
-});
+// const whiteList = ['/login'];
+// router.beforeEach((to, from, next) => {
+//   if (whiteList.includes(to.path)) {
+//     next();
+//   } else {
+//     store
+//       .dispatch('checkLogin')
+//       .then(res => {
+//         if (res) {
+//           next();
+//         } else {
+//           // store.dispatch('logout');
+//           next('/login');
+//         }
+//       })
+//       .catch(err => {
+//         console.log('catch: ');
+//         next('/login');
+//       });
+//   }
+// });
 
 export default router;

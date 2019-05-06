@@ -19,6 +19,8 @@ const _axios = axios.create(config);
 
 _axios.interceptors.request.use(
   function(config) {
+    // 取消所有请求
+    return null;
     // Do something before request is sent
     // store.user.token
     if (store.state.user.token) {
@@ -43,6 +45,8 @@ _axios.interceptors.response.use(
     }
   },
   function(error) {
+    // 自己玩总是弹窗
+    return { code: true, message: 'ok' };
     let msg = '服务器出错，请联系管理员';
     if (error.response && error.response.status === 408) {
       msg = '请求超时，请联系管理员';

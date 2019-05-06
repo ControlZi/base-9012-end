@@ -2,7 +2,7 @@
   <el-row class="menu">
     <el-col :span="3" class="menu-header">
       <span class="title">
-        圆通工程项目管理
+        HELLO WROLD
       </span>
     </el-col>
     <el-col :span="20" class="menu-item">
@@ -56,7 +56,10 @@ export default {
 .menu {
   box-sizing: border-box;
   color: #fff;
-  background: #4265ed;
+  background: #2196f3;
+  background: -webkit-linear-gradient(to left, #f44336, #2196f3);
+  background: linear-gradient(to left, #f44336, #2196f3);
+
   .menu-header {
     height: 70px;
     font-size: 18px;
@@ -82,11 +85,11 @@ export default {
         font-size: 16px;
         list-style: none;
         &:hover {
-          background: #4479f9;
+          box-shadow: 0px 0px 10px red inset;
         }
       }
       .active {
-        background: #4479f9;
+        box-shadow: 0px 0px 10px red inset;
       }
     }
   }
