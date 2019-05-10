@@ -87,11 +87,6 @@ export default {
     selectInit(row, index) {
       return row.s;
     },
-    searchBtn() {
-      this.copyForm();
-      this.clearSelection();
-      this.search();
-    },
     search() {
       contractAPI.list({ ...this.formCopy, ...this.page }).then(res => {
         if (res.code === true) {

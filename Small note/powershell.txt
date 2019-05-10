@@ -1,6 +1,0 @@
-Start-Process notepad -Verb runas
-(Get-WmiObject -query ‘select * from SoftwareLicensingService’).OA3xOriginalProductKey  （查看密钥  VK7JG-NPHTM-C97JM-9MPGT-3V66T）
-
-
-netstat -aon|findstr "80"
-tasklist|findstr "2448"  查看端口

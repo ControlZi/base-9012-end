@@ -145,11 +145,6 @@ export default {
     }
   },
   methods: {
-    searchBtn() {
-      this.copyForm();
-      this.clearSelection();
-      this.search();
-    },
     search() {
       projectAPI.list({ ...this.formCopy, ...this.page }).then(res => {
         if (res.code === true) {

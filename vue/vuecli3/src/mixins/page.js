@@ -38,6 +38,12 @@ export default {
     }
   },
   methods: {
+    searchBtn() {
+      this.page.current = 1;
+      this.copyForm();
+      this.clearSelection();
+      this.search();
+    },
     commonModify(id, type) {
       let obj = {
         // baseInfo: 0b101010101010, // view关

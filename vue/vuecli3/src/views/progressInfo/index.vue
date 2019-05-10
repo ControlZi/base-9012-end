@@ -76,11 +76,6 @@ export default {
     };
   },
   methods: {
-    searchBtn() {
-      this.copyForm();
-      this.clearSelection();
-      this.search();
-    },
     search() {
       let query = { ...this.formCopy };
       query.month = query.month.join(',');

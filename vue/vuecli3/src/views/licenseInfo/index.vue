@@ -21,7 +21,7 @@
       <el-row class="content-header" type="flex" justify="space-between">
         <el-col :span="12" class="toolip-left">
           <el-button-group>
-            <el-button @click="handleTab('use')" :class="{active: showType === 'use'}">自由土地使用权</el-button>
+            <el-button @click="handleTab('use')" :class="{active: showType === 'use'}">自有土地使用权</el-button>
             <el-button @click="handleTab('house')" :class="{active: showType === 'house'}">自有房屋产权</el-button>
             <el-button @click="handleTab('build')" :class="{active: showType === 'build'}">建设五证</el-button>
           </el-button-group>
@@ -109,11 +109,6 @@ export default {
   methods: {
     selectInit(row, index) {
       return row.s;
-    },
-    searchBtn() {
-      this.copyForm();
-      this.clearSelection();
-      this.search();
     },
     search() {
       let query = { ...this.formCopy };

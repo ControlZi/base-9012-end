@@ -96,19 +96,19 @@
               </base-form-item>
             </el-row>
           </el-form>
-          <el-form ref="mForm2" :model="addForm" label-width="80px" v-show="isModifyPWD">
+          <el-form ref="mForm2" :model="pwdForm" label-width="80px" v-show="isModifyPWD">
             <el-row>
               <base-form-item size="two" label="用户名">
-                <el-input v-model="addForm.realName" placeholder="请输入" disabled></el-input>
+                <el-input v-model="pwdForm.realName" placeholder="请输入" disabled></el-input>
               </base-form-item>
               <base-form-item size="two" label="工号">
-                <el-input v-model="addForm.username" placeholder="请输入" disabled></el-input>
+                <el-input v-model="pwdForm.username" placeholder="请输入" disabled></el-input>
               </base-form-item>
               <base-form-item size="two" label="输入密码" rule="_pwd" prop="password" :errPosition="false">
-                <el-input v-model="addForm.password" placeholder="请输入" show-password></el-input>
+                <el-input v-model="pwdForm.password" placeholder="请输入" show-password></el-input>
               </base-form-item>
               <base-form-item size="two" label="确认密码">
-                <el-input v-model="addForm.repeatPWD" placeholder="请输入" show-password></el-input>
+                <el-input v-model="pwdForm.repeatPWD" placeholder="请输入" show-password></el-input>
               </base-form-item>
             </el-row>
           </el-form>
@@ -155,11 +155,6 @@ export default {
     };
   },
   methods: {
-    searchBtn() {
-      this.copyForm();
-      this.clearSelection();
-      this.search();
-    },
     search() {
       userAPI.list({ ...this.formCopy, ...this.page }).then(res => {
         if (res.code === true) {
@@ -208,7 +203,11 @@ export default {
               })
               break;
             case 'pwd':
-              userAPI.set({ id: this.operateId, password: query.password }).then(res => {
+              if (this.pwdForm.repeatPWD !== this.pwdForm.password) {
+                this.showMsg('两次密码不一致', 'error');
+                return;
+              }
+              userAPI.set({ id: this.operateId, password: this.pwdForm.password }).then(res => {
                 if (res.code === true) {
                   this.showMsg('修改密码成功', 'success')
                   this.modifyDialogShow = false;
@@ -237,6 +236,8 @@ export default {
           this.operateId = row.id;
           this.addForm.realName = row.realName;
           this.addForm.username = row.username;
+          this.pwdForm.realName = row.realName;
+          this.pwdForm.username = row.username;
           this.addForm.roleID = row.roleID;
           this.modifyDialogShow = true;
           break;

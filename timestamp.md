@@ -1,7 +1,21 @@
-#### 20190429
+#### 20190508
+
+- in the end
+- Forget the past and don't the future
+
+---
+
+#### 20190508
+
+- workbox -> register-service-worker -> pwa(cli3 自带) 真的理解不动 [哎](https://segmentfault.com/a/1190000016580002)
+
+---
+
+#### 20190507
 
 - vue 动态直接渲染组件的字符串(失败)
 - eventBus (引用主机，直接注册在 vue.prototype.\$bus)
+- [webrtc](https://github.com/wuyawei/webrtc-stream)和一些小 demo
 - 网道
 
 ---
