@@ -1,4 +1,13 @@
-#### 20190508
+#### 20190516
+
+- [从梦想到财富](https://zhuanlan.zhihu.com/dream2riches) - 唯心鸡汤
+- read English document (try to make it)
+- 写一下东西时，用 readme 记录一下整项目的流程
+- [wabpack](https://webpack.js.org/concepts)
+
+---
+
+#### 20190509
 
 - in the end
 - Forget the past and don't the future
@@ -65,12 +74,6 @@
 
 ---
 
-#### 20190416
-
-- 网道 [标准库](https://wangdoc.com/javascript/stdlib/index.html) object
-
----
-
 #### 20190418
 
 - 网道 [运算符](https://wangdoc.com/javascript/operators/index.html)
@@ -83,5 +86,11 @@
 - 网道 [字符串](https://wangdoc.com/javascript/types/string.html) ~ 数据类型
 - 工程项目
   - 登录逻辑 router.beforeEach, store/modules/user.js
+
+---
+
+#### 20190416
+
+- 网道 [标准库](https://wangdoc.com/javascript/stdlib/index.html) object
 
 ---
