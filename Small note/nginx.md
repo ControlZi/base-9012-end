@@ -49,6 +49,12 @@ server {
 
 #### liunx
 
+```cmd
+# reload (nginx/sbin目录)
+./nginx -s reload
+sh -x ./xxx.sh
+```
+
 ---
 
 #### windows

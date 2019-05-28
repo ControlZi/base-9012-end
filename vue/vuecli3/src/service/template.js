@@ -36,7 +36,7 @@ export default {
       method: 'get',
       responseType: 'blob'
     });
-  }
+  },
   // download(alink).then(res => {
   //   this.loading.close();
   //   const blob = new Blob([res], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8' });
@@ -50,4 +50,20 @@ export default {
   //   document.body.removeChild(downloadElement); // 下载完成移除元素
   //   window.URL.revokeObjectURL(href); // 释放掉blob对象
   // });
+  
+  // 接口缓存
+  setCache(url, sesionName, data = {}) {
+    let areaData = window.sessionStorage.getItem(sesionName);
+    if (areaData) {
+      return new Promise((resolve, reject) => {
+        resolve(JSON.parse(areaData));
+      });
+    }
+    return request.post(url, data).then(res => {
+      if (res.code === 'success') {
+        window.sessionStorage.setItem(sesionName, JSON.stringify(res));
+      }
+      return res;
+    });
+  },
 };

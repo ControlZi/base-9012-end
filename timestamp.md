@@ -1,3 +1,12 @@
+#### 20190523
+
+- [vue-cli3 CDN](https://www.jianshu.com/p/aebfa267f7cd), 同时可参考 vue-admin 里面的配置
+- [vue SSR](https://segmentfault.com/a/1190000016637877) 很详细
+- [markdown-it](https://markdown-it.docschina.org/) -npm
+- [vuepress](https://vuepress.vuejs.org/zh/)
+
+---
+
 #### 20190516
 
 - [从梦想到财富](https://zhuanlan.zhihu.com/dream2riches) - 唯心鸡汤

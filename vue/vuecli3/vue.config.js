@@ -4,6 +4,10 @@ function resolve(dir) {
 }
 module.exports = {
   chainWebpack: config => {
+    // "analyzer": "use_analyzer=true vue-cli-service serve"
+    // if (process.env.use_analyzer) {
+    //   config.plugin('webpack-bundle-analyzer').use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin);
+    // }
     // config.resolve.alias.set('@', resolve('src'));
     const svgRule = config.module.rule('svg');
     svgRule.uses.clear();
