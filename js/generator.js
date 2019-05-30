@@ -193,7 +193,7 @@ function* manyYields() {
 async function foo() {
   await bar();
 }
-let foo = (() => {
+foo = (() => {
   var _ref = _asyncToGenerator(function*() {
     yield bar();
   });

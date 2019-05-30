@@ -18,7 +18,7 @@ var server = http.createServer((request, response) => {
         'Content-Type': 'text/html'
     });
     response.writeHead(200);
-    // console.log('request:', request.url, request.method);
+    console.log('request:', request.url, request.method);
     // let pathName = url.parse(request.url).pathname;
     // pathName = './' + pathName;
     // let rs = fs.createReadStream(pathName, 'utf-8');
